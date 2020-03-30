@@ -6,6 +6,6 @@ class CashRegister
     @discount = discount[0]
   end
 
-  def total=
+  def total=(items)
   end
 end
