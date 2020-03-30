@@ -13,7 +13,7 @@ class CashRegister
       @total += price * quantity[0]
       until quantity[0] == 0
         @items << item
-        quantity[0]-=1
+        quantity[0] -= 1
       end
     else
       @total += price
@@ -23,7 +23,7 @@ class CashRegister
 
   def apply_discount
     if @discount
-      @total*= ((100 - @discount) * 0.01)
+      @total *= ((100 - @discount) * 0.01)
       if @total.to_i == @total
         "After the discount, the total comes to $#{@total.to_i}."
       else
