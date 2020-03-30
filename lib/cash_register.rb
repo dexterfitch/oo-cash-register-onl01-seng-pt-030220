@@ -7,14 +7,14 @@ class CashRegister
     @items = []
   end
 
-  def add_item(item, price, *quantity)
+  def add_item(item, price, quantity = 1)
     @price = price
-    if quantity.length > 0
-      @quantity = quantity[0]
-      @total += price * quantity[0]
-      until quantity[0] == 0
+    @quantity = quantity
+    if quantity > 1
+      @total += price * quantity
+      until quantity == 0
         @items << item
-        quantity[0] -= 1
+        quantity -= 1
       end
     else
       @total += price
