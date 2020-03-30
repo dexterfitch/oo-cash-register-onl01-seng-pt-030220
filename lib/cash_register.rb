@@ -9,7 +9,7 @@ class CashRegister
 
   def add_item(item, price, *quantity)
     @items << item
-    if quantity
+    if quantity[0]
       bulk = price * quantity
       @total += bulk
     else
