@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :items, :price
+  attr_accessor :total, :discount, :items
 
   def initialize(*discount)
     @total = 0
@@ -10,6 +10,7 @@ class CashRegister
   def add_item(item, price, *quantity)
     @price = price
     if quantity.length > 0
+      @quantity = quantity[0]
       @total += price * quantity[0]
       until quantity[0] == 0
         @items << item
