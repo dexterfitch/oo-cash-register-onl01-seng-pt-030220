@@ -8,11 +8,12 @@ class CashRegister
   end
 
   def add_item(item, price, *quantity)
-    @items << item
     if quantity.length > 0
       @total += price * quantity[0]
+      (@items << item) * quantity[0]
     else
       @total += price
+      @items << item
     end
   end
 
